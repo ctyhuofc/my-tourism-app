@@ -1,0 +1,49 @@
+    <h1>Innovative Ideas</h1> 
+    <div class ="form-container">
+    <form [formGroup]="techIdeasForm" class="myForm"> <div>
+        <label for="userName"> Name </label>
+        <br>
+        <input type="text" id="userName" formControlName="name"> 
+        </div> 
+        <span *ngIf="nameFormControl.touched && nameFormControl.errors?.['minlength']"> Your name should be more than 2 letters</span>
+        <span *ngIf="nameFormControl.touched && nameFormControl.errors?.['required']"> Please insert your name </span>
+        <span *ngIf="nameFormControl.errors?.['prohibited'] && nameFormControl.touched">You cannot use the word "tourist"</span>
+        <!-- <span *ngIf="techIdeasForm.get('name').errors?.restrictedWord&& techIdeasForm.get('name').touched && !techIdeasform.get('name').errors?. required &&!techIdeasform.get('tourist').errors?.minlength">Your name cannot contain the word tourist
+        </span>  -->
+        <br/> 
+        <div>
+        <label for="userEmail"> E-mail </label>
+        <br>
+        <input type="email" id="userEmail" formControlName="email"> </div> 
+        <span *ngIf="emailFormControl.touched && emailFormControl.errors?.['required']"> Please insert your email
+        </span> <br/> <div>
+        <label for="userAge"> Age </label>
+        <br>
+        <input type="number" id="userAge" formControlName="age"> </div>
+        <br/>
+    <div>
+    <label for="targetCity"> Target City </label>
+    <select id = "targetCity" formControlName="city"> 
+    <option value="">--Select--</option>
+    <option value="Aswan">Aswan</option>
+    <option value="Cairo">Cairo</option>
+    <option value="Luxor">Luxor</option>
+    <option value="Sharm El-Sheikh">Sharm El-Sheikh</option>
+    <option value = "{{cities}}" *ngFor = "let city of cities">{{city}}</option>
+
+    </select> 
+    </div>
+    <span *ngIf="cityFormControl.touched && cityFormControl.errors?.['required']">Please choose a City</span>
+    <br/> 
+    <div>
+    <label for="brief"> Brief about your technical idea: </label>
+    <br>
+    <textarea rows="4" cols="50" formControlName="brief"> </textarea>
+    </div> 
+    <span *ngIf="briefFormControl.touched && briefFormControl.errors?.['required']">Please Enter a Brief</span>
+    <span *ngIf="briefFormControl.touched && briefFormControl.errors?.['minlength']"> Your Brief should be more than 99 Characters</span>
+    <span *ngIf="briefFormControl.errors?.['prohibited'] && briefFormControl.touched">You cannot use the word "nothing"</span>
+    <br/>
+    <button type="submit" (click)="onClick()"[disabled]="techIdeasForm.invalid"> Submit </button>
+    </form>
+    </div>

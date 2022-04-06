@@ -1,0 +1,19 @@
+#appName{
+    font-size: 20px;
+    margin-left: 25px;
+    margin-right: 25px; 
+}
+
+#aim{
+    font-weight: bold;
+    margin-left: 25px;
+    margin-right: 25px; 
+}
+div{
+    margin-left: 25px;
+    margin-right: 25px; 
+}
+
+img{
+    width: 40%
+}

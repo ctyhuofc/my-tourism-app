@@ -1,0 +1,21 @@
+span{
+    color: red;
+    font-style: italic;
+}
+
+form{
+    margin-left: 25px;
+    margin-right: 25px; 
+}
+
+label{
+    font-weight: bold;
+}
+
+.form-container{
+    background-color:ivory;
+}
+
+input, textarea{
+    width: 100%
+}

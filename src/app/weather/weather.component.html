@@ -1,0 +1,12 @@
+<div>
+    <ul style="list-style: none;">
+        <li *ngFor="let weather of weatherData" class="removebullet">
+            <br>
+            <a class="styleCities" [routerLink]="['/weather', weather.name]">{{weather.name}}</a>
+        </li>
+    </ul>
+</div>
+
+<!-- <div *ngFor="let weather of weatherData">
+    <app-weather-details [weatherData]="weather"></app-weather-details>
+</div> -->

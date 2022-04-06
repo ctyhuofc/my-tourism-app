@@ -1,0 +1,11 @@
+<div *ngFor="let city of cities">
+
+    <h3>
+      <a [title]="city.name">
+    <p>{{city.name}}</p>
+      </a>
+    </h3>
+    <ul>
+        <li [ngClass]="colorit">{{city.attractionSites}} </li>
+    </ul>
+</div>
